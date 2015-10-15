@@ -5,8 +5,7 @@
 
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.");
-//      return prompt(;
-      return "rock";
+      return prompt();
 }
 function randomPlay() {
     var randomNumber = Math.random();
@@ -26,6 +25,11 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
+    move = getInput();
+
+    while ( (move != "rock") && (move!="paper") && (move!="scissors") ) {
+        move = getInput();
+    }
     return move || getInput();
 }
 
